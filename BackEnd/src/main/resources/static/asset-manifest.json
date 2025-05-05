@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6344f3d3.css",
+    "main.js": "/static/js/main.9449e7e7.js",
+    "static/media/loading.gif": "/static/media/loading.66bb10dcfcebe4a0af3f.gif",
+    "static/media/logo_telsoft.png": "/static/media/logo_telsoft.c2cf88004c5c2289fe8d.png",
+    "static/media/vnpt.png": "/static/media/vnpt.72ae52cea261e5ddbeba.png",
+    "index.html": "/index.html",
+    "main.6344f3d3.css.map": "/static/css/main.6344f3d3.css.map",
+    "main.9449e7e7.js.map": "/static/js/main.9449e7e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6344f3d3.css",
+    "static/js/main.9449e7e7.js"
+  ]
+}

@@ -1,0 +1,127 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Websheet App debug</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<form action="/websheet/esim/generic/companion/signupTest" method="post"
+>
+    <textarea id="debug" name="debug" style="width:100%; height:300px;">
+{
+  "esim-device-active": {
+    "device-name": "GW3",
+    "device-type": "Samsung Gear",
+    "eid": "89049032100005550100043803363966",
+    "serial-number": "355270111023073",
+    "installed-iccids": []
+  },
+  "websheet-session-token": "phB3kvr0QGOkCYwlGcUPBIWuJXmF8DYqYix%2BB%2Fv3zYt4Qxa9aFRl4T%2BwUUEe6%2FGYvT2DRMfuqM0LEke5%2FUN77ISRtD0qRToAzwt%2FdQueiON%2FJmwn%2Bb6Fo%2FN5TA6kv2UoFZMHr2ndEyKfCiik4Vx89x77yu7kxMvqvW0k%2BzWjVQi9Q5m2%2BaRGt9HD8w3d6b4q6XYujDFOQz0bcm3kReK%2B6f0W6Sp%2F2g7G7iXvMvqLPmrDD0%2BrH%2FvQnRI7UiOOcmkpM9Hl3QL%2B0CJP69NdAv%2F0sn0KyCjs6z3bS6FQbwAeaF5iawc29JOinTGkbZi9IvIkE0fhJnuCROogrd8USnUANvuIEUy1MYoUv3s5KzJmQtcwaBUCqhXUHQWLDAADfmrDDSl%2FtmPPu9g5NxAHECJdPzPLuiu60d6KxLefqc2MRn%2FF%2F%2BJT6ZVvCfVf9YRRABJZNhQhRkEUDQxyeiE3A5rg0a3o9YncX7B%2FLHLEwjxOP45z%2FxgbnvYYqEc8tPojogG7o0ZgkSdHdVDx3MsX6SwJuqYvcTN6Vc%2BDU%2FSepIWtof4S1muzoeSIpYfI5CEDqj4B"
+}
+</textarea>
+    <div id="id-div-radios">
+        <input id="activateEsimDevice" name="type" checked type="radio" value="s"/>
+        <label for="activateEsimDevice">activateEsimDevice</label>
+        <br/>
+
+        <input id="manageEsimDevice" name="type" type="radio" value="s"/>
+        <label for="manageEsimDevice">manageEsimDevice</label>
+        <br/>
+
+        <input id="recoveryEsimDevice" name="type" type="radio" value="s"/>
+        <label for="recoveryEsimDevice">recoveryEsimDevice</label>
+        <br/>
+    </div>
+    <button id='submit' type="submit" value="submit">submit</button>
+</form>
+<script>
+    const q = function (query) {
+        return document.querySelector(query);
+    };
+
+    const qs = function (query) {
+        return document.querySelectorAll(query);
+    };
+
+    const setAction = function () {
+        let form = q('form');
+
+        if (document.getElementById("activateEsimDevice").checked) {
+            form.action = "/websheet/esim/generic/companion/signupTest";
+
+        } else if (document.getElementById("manageEsimDevice").checked) {
+            form.action = "/websheet/esim/generic/companion/manageaccountTest";
+			
+        } else if (document.getElementById("recoveryEsimDevice").checked) {
+            form.action = "/websheet/esim/generic/companion/signupTest"
+
+        }
+    };
+
+
+    const setPostData = function () {
+        if (document.getElementById("activateEsimDevice").checked) {
+            let jsonObj = {
+                "esim-device-active": {
+                    "device-name": "GW3",
+                    "device-type": "Samsung Gear",
+                    "eid": "89049032100005550100043500055345",
+                    "serial-number": "356116114088929",
+                    "installed-iccids": []
+                },
+                "websheet-session-token": "VlaOPYNUi90s9SXozk4yVRequIX%2FPAyT4w%2BlBDzhUwBkZ5Hyz6ltBZqBWCcN9bmCWpzW2wFq8V6Atx0E0I%2BySXq78zu%2F3%2BDaFTBFOGQ%2F%2B0wJC1AONO5PH3PHS%2BfqxuRnNrjIGUduMP8SfZlGqr5eL9w8auGAQEK1RDF56wcumSKFyvlzd18VKhjAwQ1zA58%2BCrO75JAGaV2a16w%2BnsU4QbAdKKDEEwZn57aEaVk9BMxaNec8rBf1hVdafyd3VaM89NJbqYuVB4%2BcjX8upr1BF3NdkwdgRSW4n5SmCXTVanQsDSMpcPT4QIYabfoi4fFnWGCzISWpWcF61FG6pJIPS6sI%2F9p25yDq38Muc7Az%2B2Iwhvu%2FTLUIJfFblsQVfS0cWOCuqlsaqsYVArenYSdppLelG6NFnrVXftnRi%2F5%2FoG286RBJKnZ5vhBD4fydOcn0kyMD6QGIGBaBUkbfEIn4WZ0dmJ7w6A5xrfUxrC%2Bq8GBhSPOHtGiZa0vL%2F4QcVI6I9QCV3U7nizDbpZeGm4Xw6CbsYoV8mVD6dPjuL9gkp2It%2FP%2FpSsZ%2Fu5SRhLZtposxWHT1F4nisc3syMfK%2FzR%2BIEsvilGGRFdZ4DXNODs25MzEP6Zc%2Fkpmf4PJtxfPj3ivJoHZVqEi%2FolbPSgpAfj8wg%3D%3D"
+				};
+            document.getElementsByTagName("textarea")[0].value = JSON.stringify(jsonObj);
+
+        }
+		if (document.getElementById("manageEsimDevice").checked) {
+            let jsonObj = {
+				  "esim-device-active": {
+					"device-name": "GW3",
+					"device-type": "Samsung Gear",
+					"eid": "89049032100005550100043500055345",
+					"serial-number": "356116114088929",
+					"installed-iccids": []
+				  },
+				  "websheet-session-token": "VlaOPYNUi90s9SXozk4yVRequIX%2FPAyT4w%2BlBDzhUwBkZ5Hyz6ltBZqBWCcN9bmCWpzW2wFq8V6Atx0E0I%2BySXq78zu%2F3%2BDaFTBFOGQ%2F%2B0wJC1AONO5PH3PHS%2BfqxuRnNrjIGUduMP8SfZlGqr5eL9w8auGAQEK1RDF56wcumSKFyvlzd18VKhjAwQ1zA58%2BCrO75JAGaV2a16w%2BnsU4QbAdKKDEEwZn57aEaVk9BMxaNec8rBf1hVdafyd3VaM89NJbqYuVB4%2BcjX8upr1BF3NdkwdgRSW4n5SmCXTVanQsDSMpcPT4QIYabfoi4fFnWGCzISWpWcF61FG6pJIPS6sI%2F9p25yDq38Muc7Az%2B2Iwhvu%2FTLUIJfFblsQVfS0cWOCuqlsaqsYVArenYSdppLelG6NFnrVXftnRi%2F5%2FoG286RBJKnZ5vhBD4fydOcn0kyMD6QGIGBaBUkbfEIn4WZ0dmJ7w6A5xrfUxrC%2Bq8GBhSPOHtGiZa0vL%2F4QcVI6I9QCV3U7nizDbpZeGm4Xw6CbsYoV8mVD6dPjuL9gkp2It%2FP%2FpSsZ%2Fu5SRhLZtposxWHT1F4nisc3syMfK%2FzR%2BIEsvilGGRFdZ4DXNODs25MzEP6Zc%2Fkpmf4PJtxfPj3ivJoHZVqEi%2FolbPSgpAfj8wg%3D%3D"
+				};
+            document.getElementsByTagName("textarea")[0].value = JSON.stringify(jsonObj);
+
+        } 
+		if (document.getElementById("recoveryEsimDevice").checked) {
+            let jsonObj = {
+                "esim-device-active": {
+                    "device-name": "GW",
+                    "device-type": "Samsung Gear",
+                    "eid": "89049032100005550100043500055345",
+                    "serial-number": "356116114088929",
+                    "installed-iccids": []
+                },
+                "websheet-session-token": "VlaOPYNUi90s9SXozk4yVRequIX%2FPAyT4w%2BlBDzhUwBkZ5Hyz6ltBZqBWCcN9bmCWpzW2wFq8V6Atx0E0I%2BySXq78zu%2F3%2BDaFTBFOGQ%2F%2B0wJC1AONO5PH3PHS%2BfqxuRnNrjIGUduMP8SfZlGqr5eL9w8auGAQEK1RDF56wcumSKFyvlzd18VKhjAwQ1zA58%2BCrO75JAGaV2a16w%2BnsU4QbAdKKDEEwZn57aEaVk9BMxaNec8rBf1hVdafyd3VaM89NJbqYuVB4%2BcjX8upr1BF3NdkwdgRSW4n5SmCXTVanQsDSMpcPT4QIYabfoi4fFnWGCzISWpWcFgdlR%2BFjZuc7K82UQYNaiGjKCMycOGnmkOfMOhOa87lMvB1yROD4vPKpIaybqdEnG3EaQ58yPquxzrigY0vhFOoHHHVms9c3qu%2Bn67NW42k9XWaJzvHGn1C1FR5FZEKgwWAyMFswELU7sIhMbNQdG5Oz4WFFSWX%2FyhAfcfdG47OMV6BwjxGb0qhlSfpwv%2FHMIqh7uJJ1wVzha9%2Fxq4M6Hu9bnNpuf9nc22Fh7t3GBu29ZA0rCFyO6zjj8SH7hlGKm6nVvmI9qY7o4ARyMWFevAkSHNnCgbCW4DdR5%2B2ql3zD1saVJydJ4N7iqf%2FG4eXRvHL1P7xawXrA%3D%3D"
+				};
+            document.getElementsByTagName("textarea")[0].value = JSON.stringify(jsonObj);
+
+        }
+    };
+
+    const onRadioClick = function () {
+        setAction();
+        setPostData();
+    };
+
+    const bindEvent = function (e) {
+        let radios = q('#id-div-radios').querySelectorAll('input[type=radio]');
+        radios.forEach(i => i.addEventListener('click', onRadioClick, true));
+    };
+
+    const main = function () {
+        bindEvent();
+    };
+
+    main();
+</script>
+</body>
+
+</html>
