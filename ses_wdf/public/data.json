@@ -1,0 +1,111 @@
+{
+    "fonts": {
+        "Satoshi": {
+            "value": "font-satoshi",
+            "label": "Satoshi"
+        },
+        "BeVietnamPro": {
+            "value": "font-bevietnampro",
+            "label": "Be Vietnam Pro"
+        }
+    },
+    "fontWeight": {
+        "Bold": {
+            "value": "700",
+            "label": "Bold"
+        },
+        "SemiBold": {
+            "value": "600",
+            "label": "Semi Bold"
+        },
+        "Medium": {
+            "value": "500",
+            "label": "Medium"
+        },
+        "Regular": {
+            "value": "400",
+            "label": "Regular"
+        },
+        "Light": {
+            "value": "300",
+            "label": "Light"
+        },
+        "ExtraLight": {
+            "value": "200",
+            "label": "Extra Light"
+        },
+        "Thin": {
+            "value": "100",
+            "label": "Thin"
+        }
+    },
+    "fontStyle": {
+        "Normal": {
+            "value": "normal",
+            "label": "Normal"
+        },
+        "Italic": {
+            "value": "italic",
+            "label": "Italic"
+        }
+    },
+    "defaultStyle": {
+        "error": {
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "size": "20px",
+            "color": "FF0000"
+        },
+        "lablel": {
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "size": "16px",
+            "color": "000000"
+        },
+        "header": {
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "size": "20px",
+            "color": "000000"
+        },
+        "content": {
+            "fontWeight": "400",
+            "fontStyle": "italic",
+            "size": "14px",
+            "color": "000000"
+        },
+        "hint": {
+            "fontWeight": "100",
+            "fontStyle": "italic",
+            "size": "12px",
+            "color": "0000FF"
+        },
+        "button": {
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "size": "16px",
+            "color": "FFFFFF",
+            "type": "6px",
+            "background": "0000FF",
+            "borderColor": "0000FF"
+        },
+        "cancelButton": {
+            "fontWeight": "400",
+            "fontStyle": "italic",
+            "size": "16px",
+            "color": "000000",
+            "type": "6px",
+            "background": "FFFFFF",
+            "borderColor": "000000"
+        },
+        "textField": {
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "size": "14px",
+            "color": "000000",
+            "type": "6px"
+        },
+        "description": "default",
+        "font": "font-bevietnampro"
+    }
+}
